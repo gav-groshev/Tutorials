@@ -1,5 +1,6 @@
 ﻿using PostSharp.Aspects;
 using PostSharp.Serialization;
+using System;
 
 namespace PostsharpTutorial.Aspects
 {
@@ -24,7 +25,6 @@ namespace PostsharpTutorial.Aspects
         public override void OnExit(MethodExecutionArgs args)
         {
             WriteOperationResult("Exiting", args);
-            System.Console.WriteLine("---");
         }
 
         public override void OnSuccess(MethodExecutionArgs args)
@@ -35,7 +35,7 @@ namespace PostsharpTutorial.Aspects
         private void WriteOperationResult(string operation, MethodExecutionArgs args)
         {
             var operationResult = $"{operation}: {args.Instance.GetType().Name} :: {args.Method.Name}";
-            System.Console.WriteLine(operationResult);
+            Console.WriteLine(operationResult);
         }
     }
 }

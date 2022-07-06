@@ -1,5 +1,6 @@
 ﻿using PostsharpTutorial.Aspects;
 using System;
+
 namespace PostsharpTutorial
 {
     [MethodBoundaryAspect] //Applies to all methods including ctors and properties
