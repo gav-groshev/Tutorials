@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PostsharpTutorial.Aspects;
+using System;
 
 namespace PostsharpTutorial
 {
@@ -6,7 +7,17 @@ namespace PostsharpTutorial
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            WriteClockNotifications();
+        }
+
+        //Getting starting with AOP: https://www.youtube.com/watch?v=Vw7ISN3-TJY
+        private static void WriteClockNotifications()
+        {
+            var clock = new ClockNotifier();
+
+            clock.WriteCurrentTime();
+            clock.WriteCurrentTimeIsLeap();
+
         }
     }
 }
