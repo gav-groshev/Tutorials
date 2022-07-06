@@ -8,7 +8,8 @@ namespace PostsharpTutorial
         static void Main(string[] args)
         {
             //WriteClockNotifications();
-            WriteAccountOperationResults();
+            //WriteAccountOperationResults();
+            WriteCalculationResult();
         }
 
         //Getting starting with AOP: https://www.youtube.com/watch?v=Vw7ISN3-TJY
@@ -36,6 +37,19 @@ namespace PostsharpTutorial
             account.DecreaseValue(400);
             Console.WriteLine($"Account value: {account.AccountValue}");
             Console.WriteLine("---");
+        }
+
+        //Custom Contracts example from documentation
+        public static void WriteCalculationResult()
+        {
+            var calc = new Calculator();
+            calc.WriteCalculationResult(2,'+',2);
+            calc.WriteCalculationResult(2, '-', 2);
+            calc.WriteCalculationResult(2, '*', 3);
+            calc.WriteCalculationResult(2, '/', 4);
+            calc.WriteCalculationResult(2, '/', 0);
+            calc.WriteCalculationResult(2, '=', 2);
+
         }
     }
 }
