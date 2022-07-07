@@ -8,7 +8,6 @@
 Ext.define('tutorial.view.main.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
-
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
@@ -16,9 +15,10 @@ Ext.define('tutorial.view.main.Main', {
         'tutorial.view.main.MainController',
         'tutorial.view.main.MainModel',
         'tutorial.view.main.List',
-        'tutorial.view.Extra'
+        'tutorial.view.Extra',
+        'tutorial.view.Search'
     ],
-
+    alies: 'view.main',
     controller: 'main',
     viewModel: 'main',
 
@@ -76,35 +76,41 @@ Ext.define('tutorial.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
-        items: [{
-            xtype: 'mainlist'
+            title: 'Home',
+            iconCls: 'fa-home',
+            // The following grid shares a store with the classic version's grid as well!
+            items: [{
+                xtype: 'mainlist'
+            }]
+        }, {
+            title: 'Users',
+            iconCls: 'fa-user',
+            bind: {
+                html: '{loremIpsum}'
+            }
+        }, {
+            title: 'Groups',
+            iconCls: 'fa-users',
+            bind: {
+                html: '{loremIpsum}'
+            }
+        }, {
+            title: 'Settings',
+            iconCls: 'fa-cog',
+            bind: {
+                html: '{loremIpsum}'
+            }
+        }, {
+            title:'Extra view', 
+            iconCls: 'fa-plus-circle',
+            items:[{
+                xtype:'extra'
+            }]
+        }, {
+            title: 'Search',
+            iconCls: 'fa-search',
+            items:[{
+                xtype:'search'
+            }]
         }]
-    }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title:'Extra view', 
-        iconCls: 'fa-cog',
-        items:[{
-            xtype:'extra'
-        }]
-    }]
 });
