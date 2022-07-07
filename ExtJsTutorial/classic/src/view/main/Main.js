@@ -15,7 +15,8 @@ Ext.define('tutorial.view.main.Main', {
 
         'tutorial.view.main.MainController',
         'tutorial.view.main.MainModel',
-        'tutorial.view.main.List'
+        'tutorial.view.main.List',
+        'tutorial.view.Extra'
     ],
 
     controller: 'main',
@@ -99,5 +100,11 @@ Ext.define('tutorial.view.main.Main', {
         bind: {
             html: '{loremIpsum}'
         }
+    }, {
+        title:'Extra view', 
+        iconCls: 'fa-cog',
+        items:[{
+            xtype:'extra'
+        }]
     }]
 });

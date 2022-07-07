@@ -12,7 +12,13 @@ Ext.application({
         // so that application classes do not need to require each other.
         'tutorial.*'
     ],
-
+    launch: function(){
+        // viewport=Ext.getCmp('viewport');
+        // target=viewport.down('#viewport-target');
+        // view = Ext.create('tutorial.view.main.Main');
+        // target.add(view);
+    },
     // The name of the initial view to create.
-    mainView: 'tutorial.view.main.Main'
+    mainView: 'tutorial.view.main.Main',
+    // autoCreateViewport: true
 });
